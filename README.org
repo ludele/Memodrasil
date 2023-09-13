@@ -1,6 +1,6 @@
 #+TITLE: Memodrasil - Data Organization and Math Operations
 
-* Memodrasil is a versatile Node.js application that allows you to organize and manipulate data efficiently. Whether you need to manage structured information or perform mathematical operations, Memodrasil has got you covered.
+* What is this project?
 The project is in a prototype version right, now so it may not work as expected.
 
 ## License
