@@ -3,6 +3,6 @@
 * What is this project?
 The project is in a prototype version right, now so it may not work as expected.
 
-## License
+* License
 
-This project is licensed under the 0BSD License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the 0BSD License.
