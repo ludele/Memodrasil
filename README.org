@@ -1,4 +1,4 @@
-#+TITLE: Memodrasil - Data Organization and Math Operations
+#+TITLE: Memodrasil 
 
 * What is this project?
 The project is in a prototype version right, now so it may not work as expected.
