@@ -4,7 +4,7 @@
 const fs = require('fs');
 const Ajv = require('ajv'); // ajv used for json schema
 
-const dataFilePath = 'example.json';
+const dataFilePath = 'save-file.json';
 const schema = require('./schema.json'); // Replace with the actual path to your schema file
 
 if (!fs.existsSync(dataFilePath)) {
