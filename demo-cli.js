@@ -99,7 +99,7 @@ async function addCustomPrompts() {
             rl.question('Enter the custom variable name: ', (variableName) => {
                 rl.question('Enter the value: ', (variableValue) => {
                         // Pass user inputs to the addData function in main.js
-                        const result = addData(category, variableName, variableValue, dataType);
+                        const result = addData(category, variableName, variableValue);
                         console.log(result);
                         mainMenu();
                 });

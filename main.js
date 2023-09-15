@@ -50,7 +50,7 @@ function viewData() {
 }
 
 // function to add data to a specified category
-function addData(category, variableName, variableValue, dataType) {
+function addData(category, variableName, variableValue) {
     const data = readData();
 
     if (!data[category]) {
