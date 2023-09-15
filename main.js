@@ -59,12 +59,11 @@ function addData(category, variableName, variableValue, dataType) {
 
     if (data[category][variableName]) {
         // Handle conditions for adding values with the same name based on data type
-        console.log('Category and variable name already exist. Updating value and type.');
+        console.log('Category and variable name already exist. Updating value.');
         data[category][variableName].value = variableValue;
-        data[category][variableName].type = dataType;
     } else {
         // Add data to the specified category
-        data[category][variableName] = { value: variableValue, type: dataType };
+        data[category][variableName] = { value: variableValue };
     }
 
     // write the updated data back to the file

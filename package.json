@@ -1,5 +1,36 @@
 {
+  "name": "Memodrasil",
+  "version": "0.0.1",
+  "main": "main.js",
+  "bin": {
+  "my-command": "./demo-cli.js"
+  },
+  "scripts": {
+    "start": "node demo-cli.js"
+  },
+  "license": "0BSD",
   "dependencies": {
     "ajv": "^8.12.0"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1"
+  },
+  "pkg": {
+    "scripts": "demo-cli.js",
+    "targets": [
+	"node14-win-x64",
+	"node14-linux-x64",
+        "node14-macos-x64"
+    ],
+    "outputPath": "dist/",
+    "assets": [
+      "public/**/*",
+      "config.json",
+      "README.md"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ludele/memodrasil"
   }
 }
