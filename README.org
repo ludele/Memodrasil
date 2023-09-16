@@ -1,8 +1,13 @@
 #+TITLE: Memodrasil 
 
 * What is this project?
-The project is in a prototype version right, now so it may not work as expected.
+** What is it meant to do?
+This is a application meant to store information in JSON in different categories and subcategories. The application is meant to be a modern way of categorizing information in different categories for a decent structure. The application could be used simply as a diary or like a complex archive, it's up to the user.
+
+* Current state of the project 
+** Currently in it's first functional state.
+The project is in a prototype version right, now so it may not work as expected. Meaning that only a basic concept is showed in the code.
 
 * License
 
-This project is licensed under the 0BSD License.
+This project is licensed under the 0BSD License, for now; In other terms do whatever you want with the code.
