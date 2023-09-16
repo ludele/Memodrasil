@@ -1,11 +1,12 @@
 "use strict";
 
 // Import modules to streamline the project
-var fs = require('fs');
-var Ajv = require('ajv'); // ajv used for json schema
 
-const dataFilePath = 'save-file.json';
-var schema = require('./schema.json'); // Replace with the actual path to your schema file
+import * as fs from 'fs';
+import Ajv from 'ajv';
+
+const dataFilePath: string = 'save-file.json';
+let schema = require('./schema.json'); // Replace with the actual path to your schema file
 
 if (!fs.existsSync(dataFilePath)) {
  const emptyData = {};
