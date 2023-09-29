@@ -1,12 +1,15 @@
-#+TITLE: Memodrasil 
 
 * What is this project?
 ** What is it meant to do?
-This is a application meant to store information in JSON in different categories and subcategories. The application is meant to be a modern way of categorizing information in different categories for a decent structure. The application could be used simply as a diary or like a complex archive, it's up to the user.
+This is a application that was meant to store information in JSON in different categories and subcategories. The application is meant to be a modern way of categorizing information in different categories for a decent structure. The application could be used simply as a diary or like a complex archive, it's up to the user.
 
 * Current state of the project 
-** Currently in it's first functional state.
-The project is in a prototype version right, now so it may not work as expected. Meaning that only a basic concept is showed in the code.
+** Currently in it's first and only functional state.
+The code that exists works. by going to the javascript dist folder and having node and the required libraries installed it should work.
+
+Though this base is scraped. The project will use C# instead and change direction. Because I've noticed that javascript sucks.
+
+
 
 * License
 
