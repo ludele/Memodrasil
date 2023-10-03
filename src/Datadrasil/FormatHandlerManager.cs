@@ -6,10 +6,18 @@ using System.Threading.Tasks;
 
 namespace Datadrasil
 {
+	/// <summary>
+	/// Class that chooses between the format handlers,
+	/// to make execution of the handlers less verbose
+	/// in implementation.
+	/// </summary>
 	public class FormatHandlerManager
 	{
 		private readonly Dictionary<string, IFormatHandler> formatHandlers;
 
+		/// <summary>
+		/// Constructor that chooses the format
+		/// </summary>
 		public FormatHandlerManager()
 		{
 			formatHandlers = new Dictionary<string, IFormatHandler>
