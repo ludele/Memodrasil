@@ -6,7 +6,7 @@ import * as fs from 'fs';
 import Ajv from 'ajv';
 
 const dataFilePath: string = 'save-file.json';
-let schema = require('./schema.json'); // Replace with the actual path to your schema file
+let schema = require('./schema.json'); 
 
 if (!fs.existsSync(dataFilePath)) {
  const emptyData = {};
@@ -15,14 +15,12 @@ if (!fs.existsSync(dataFilePath)) {
 
 const ajv = new Ajv();
 
-// Function to read and parse JSON data
 function readData() {
  try {
   const dataFileContent = fs.readFileSync(dataFilePath, 'utf-8');
   
-  // check if the file is empty or data doesn't match the schema
   if (!dataFileContent || !ajv.validate(schema, JSON.parse(dataFileContent))) {
-   return {}; // return an empty object if the file is empty or data is invalid
+   return {}; 
   }
   
   const data = JSON.parse(dataFileContent);
@@ -33,10 +31,9 @@ function readData() {
  }
 }
 
-// this function writes the json data the, user submitted.
 function writeData(data: string) {
  try {
-  const formattedData = JSON.stringify(data, null, 4); // 4 spaces for indentation
+  const formattedData = JSON.stringify(data, null, 4); 
   fs.writeFileSync(dataFilePath, formattedData, 'utf-8');
  } catch (error) {
   console.error('Error writing data:', error);
@@ -44,7 +41,6 @@ function writeData(data: string) {
  }
 }
 
-// Views the json file, will be modified later to show a more human readable output
 export function viewData() {
  const data = readData();
  return data;
@@ -59,15 +55,12 @@ export function addData(category: string, variableName: string, variableValue: s
  }
  
  if (data[category][variableName]) {
-  // Handle conditions for adding values with the same name based on data type
   console.log('Category and variable name already exist. Updating value.');
   data[category][variableName].value = variableValue;
  } else {
-  // Add data to the specified category
   data[category][variableName] = { value: variableValue };
  }
  
-    // write the updated data back to the file
  writeData(data);
  
  return 'Data added';
