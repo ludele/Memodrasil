@@ -44,13 +44,9 @@ async function mainMenu() {
 }
 
 async function addDataToPrompts() {
- // Retrieve existing data
  const existingData = viewData();
- 
- // List existing categories
  const categories = Object.keys(existingData);
  
- // Display available categories
  console.log('Available Categories:');
  categories.forEach((category, index) => {
   console.log(`${index + 1}. ${category}`);
@@ -58,7 +54,7 @@ async function addDataToPrompts() {
  
  rl.question('Select a category to add information to (or type "cancel" to go back): ', (selectedCategory : string) => {
    if (selectedCategory.toLowerCase() === 'cancel') {
-    mainMenu(); // Go back to the main menu if the user cancels
+    mainMenu(); 
    } else {
     const selectedCategoryIndex = parseInt(selectedCategory) - 1;
     if (selectedCategoryIndex >= 0 && selectedCategoryIndex < categories.length) {
@@ -67,9 +63,7 @@ async function addDataToPrompts() {
      
      rl.question('Enter the custom variable name: ', (variableName : string) => {
       rl.question('Enter the value: ', (variableValue : string) => {
-       
-       // Pass user inputs to the addData function in main.js
-       
+              
        const result = addData(category, variableName, variableValue);
        console.log(result);
        mainMenu();
@@ -85,21 +79,16 @@ async function addDataToPrompts() {
 }
 
 async function addCustomPrompts() {
- // Retrieve existing data
  const existingData = viewData();
- 
- // List existing categories
  const categories = Object.keys(existingData);
  
  rl.question('Enter the category/subcategory: ', (category : string) => {
-  // Check if the entered category exists
   if (categories.includes(category)) {
    console.log('Category already exists. Data not added/updated.');
    mainMenu();
   } else {
    rl.question('Enter the custom variable name: ', (variableName : string) => {
     rl.question('Enter the value: ', (variableValue : string) => {
-     // Pass user inputs to the addData function in main.js
      const result = addData(category, variableName, variableValue);
      console.log(result);
      mainMenu();

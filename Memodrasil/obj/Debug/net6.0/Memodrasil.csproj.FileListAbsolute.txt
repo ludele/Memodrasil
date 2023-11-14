@@ -1,0 +1,14 @@
+C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\bin\Debug\net6.0\Memodrasil.exe
+C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\bin\Debug\net6.0\Memodrasil.deps.json
+C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\bin\Debug\net6.0\Memodrasil.runtimeconfig.json
+C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\bin\Debug\net6.0\Memodrasil.dll
+C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\bin\Debug\net6.0\Memodrasil.pdb
+C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\obj\Debug\net6.0\Memodrasil.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\obj\Debug\net6.0\Memodrasil.AssemblyInfoInputs.cache
+C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\obj\Debug\net6.0\Memodrasil.AssemblyInfo.cs
+C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\obj\Debug\net6.0\Memodrasil.csproj.CoreCompileInputs.cache
+C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\obj\Debug\net6.0\Memodrasil.dll
+C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\obj\Debug\net6.0\refint\Memodrasil.dll
+C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\obj\Debug\net6.0\Memodrasil.pdb
+C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\obj\Debug\net6.0\Memodrasil.genruntimeconfig.cache
+C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\obj\Debug\net6.0\ref\Memodrasil.dll

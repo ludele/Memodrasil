@@ -1,32 +1,34 @@
 {
+    "Hej": {
+        "test": {
+            "value": "34"
+        }
+    },
     "Test": {
-        "banana": {
-            "value": "apple"
+        "1234": {
+            "value": "1000"
         },
-        "orange": {
-            "value": "pear"
+        "Hej": {
+            "value": "200"
         },
-        "banana2": {
-            "value": "appl2"
+        "Nej": {
+            "value": "300"
         }
     },
-    "Test2": {
-        "ananas": {
-            "value": "blackcurrant"
+    "Yes": {
+        "a": {
+            "value": "1"
         },
-        "watermeloooon": {
-            "value": "lingonberry"
-        },
-        "aaaa": {
-            "value": "aaaa"
+        "hej": {
+            "value": "345"
         }
     },
-    "testtest": {
-        "testing": {
-            "value": "abcdefg"
+    "Kategori": {
+        "1234": {
+            "value": "1234"
         },
-        "tappple": {
-            "value": "3456"
+        "UnderKategori": {
+            "value": "Värdet"
         }
     }
 }
