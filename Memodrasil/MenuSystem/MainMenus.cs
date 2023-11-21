@@ -1,5 +1,4 @@
-﻿
-namespace Datadrasil
+﻿namespace Datadrasil
 {
 	public class MainMenus
     {

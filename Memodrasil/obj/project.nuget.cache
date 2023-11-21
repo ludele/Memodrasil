@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "5oTQ0oJuAE5u3qI1o2Id61qf1NBgFymP1op+Gx84CSn6d2D0F2bKLzUSgE2jkIDAeZy5ugOAd/92GbulR7/Qpg==",
+  "dgSpecHash": "RUW9AibLSVGZ2HKrohVFQZ6UbhKKWCGzCh0oSEdrnGmk23HcISHSvLuQKKKtvCYE6r+QE8sOLT8p1ESAj5TmfA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ludvig.johansson1\\Main\\memodrasil\\Memodrasil\\Memodrasil.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ludvig.johansson1\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\ludvig.johansson1\\.nuget\\packages\\yamldotnet\\13.7.1\\yamldotnet.13.7.1.nupkg.sha512",
     "C:\\Users\\ludvig.johansson1\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.24\\microsoft.windowsdesktop.app.ref.6.0.24.nupkg.sha512",
     "C:\\Users\\ludvig.johansson1\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.24\\microsoft.netcore.app.ref.6.0.24.nupkg.sha512",
     "C:\\Users\\ludvig.johansson1\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.24\\microsoft.aspnetcore.app.ref.6.0.24.nupkg.sha512",

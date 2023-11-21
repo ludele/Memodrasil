@@ -12,3 +12,7 @@ C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\obj\Debug\net6.0\refint\Me
 C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\obj\Debug\net6.0\Memodrasil.pdb
 C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\obj\Debug\net6.0\Memodrasil.genruntimeconfig.cache
 C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\obj\Debug\net6.0\ref\Memodrasil.dll
+C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\bin\Debug\net6.0\YamlDotNet.dll
+C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\obj\Debug\net6.0\Memodrasil.csproj.AssemblyReference.cache
+C:\Users\ludvig.johansson1\Main\memodrasil\Memodrasil\obj\Debug\net6.0\Memodrasil.csproj.CopyComplete

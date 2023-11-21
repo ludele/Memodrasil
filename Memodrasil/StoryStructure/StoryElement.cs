@@ -1,4 +1,4 @@
-﻿namespace Memodrasil
+namespace Memodrasil
 {
 	[Serializable]
 	public class StoryElement
