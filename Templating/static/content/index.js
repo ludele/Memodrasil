@@ -2,8 +2,6 @@ const http = require('http');
 const fs = require('fs').promises;
 const path = require('path');
 
-const ipH = "192.168.1.96"
-const ipS = "10.156.34.124"
 const port = 3000;
 
 async function handleFileRequest(request, response) {
@@ -18,7 +16,7 @@ async function handleFileRequest(request, response) {
    console.log(filePath);
 
    try {
-      await fs.access(filePath); 
+      await fs.access(filePath); // Check if the file exists
 
       let fileContents = await fs.readFile(filePath);
 
@@ -74,5 +72,5 @@ async function handleFileRequest(request, response) {
 
 let app = http.createServer(handleFileRequest);
 
-app.listen(port, ipS); 
-console.log(`Server listening on port ${port}`) ;
+app.listen(port);
+console.log(`Server listening on port ${port}`);
