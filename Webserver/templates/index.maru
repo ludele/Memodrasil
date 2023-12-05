@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Index</title>
+</head>
+<body>
+   <h1 class="box">This is the index page</h1>
+   <div class="box">
+      <p class="box">
+         Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+         Laborum quod possimus quis exercitationem sit animi tempora 
+         dignissimos ad. Tenetur animi unde fuga exercitationem
+         officia earum illum voluptatum consequatur sequi facere?
+      </p>
+   </div>
+   <h2>For testing</h2>
+</body>
+</html>
