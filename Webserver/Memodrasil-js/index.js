@@ -74,5 +74,5 @@ async function handleFileRequest(request, response) {
 
 let app = http.createServer(handleFileRequest);
 
-app.listen(port, ipS); 
+app.listen(port); 
 console.log(`Server listening on port ${port}`) ;

@@ -1,57 +1,39 @@
-const fs = require("fs").promises
-const templatePath = "./templates/test.maru"
-const templateList = "./templates/game-list.maru"
+// gameHandler.js
+const fs = require('fs').promises;
+const path = require('path');
+const Game = require('../game');
+const fileHandler = require('../fileHandler'); // Adjust the path as needed
+const { Script } = require('vm');
 
-exports.handleGameRoute = async function (pathSegments, request, response) {
-   function statusCodeResponse(code, value, type) {
-      response.writeHead(code, { 'Content-Type': `${type}` });
-      response.write(value);
-      response.end();
-   }
+let currentGame;
 
-   function ReplaceTemplate(placeholder, newValue) {
-      return template.replaceAll(`%${placeholder}%`, `${newValue}`)
-   }
-   
-   if (pathSegments.length === 0) {
-      let template = (await fs.readFile(templateList)).toString()
-      let profiles = [
-         {
-            name: "1",
-            url: "/games/1"
-         },
-         {
-            name: "2",
-            url: "/games/2"
-         }
-      ];
-      let lis = ""
-      for (let i = 0; i < profiles.length; i++){
-         let obj = profiles[i]
-         lis += `<li><a href="${obj.url}">${obj.name}</a></li>`
-      }
+async function handleGameRoute(pathSegments, request, response) {
+  // Initialize the game if not already
+  if (!currentGame) {
+    const narrativeFile = await fs.readFile('./narrative.json'); // Adjust the path as needed
+    const narrative = JSON.parse(narrativeFile);
+    currentGame = new Game(narrative);
+  }
 
-      template = template.replaceAll('%profiles%', lis)
+  // Handle user choices
+  if (pathSegments.length === 1 && pathSegments[0] === 'choose') {
+    const optionIndex = parseInt(request.headers['x-option-index']);
+    currentGame.chooseOption(optionIndex);
+  }
 
-      statusCodeResponse(200, template, "text/html")
-      return
-   }
+  // Render the current scene
+  const currentScene = currentGame.getCurrentScene();
+  const responseContent = `
+    <h1>${currentScene.text}</h1>
+    <ul>
+      ${currentScene.options.map((option, index) => `<li><a href="/games/choose" onclick="chooseOption(${index})">${option.text}</a></li>`).join('')}
+    </ul>
+    <script src="../static/game-script.js"></script>
+  `;
 
-   let seg = pathSegments.shift()
-
-   let template = (await fs.readFile(templatePath)).toString()
-
-   switch (seg) {
-      case "1":
-         template = ReplaceTemplate("name", "1")
-         template = ReplaceTemplate("age", "1")
-         break
-      case "2":
-         break
-      default:
-         statusCodeResponse(404, "404 Not Found", "text/plain")
-         return
-   }
-
-   statusCodeResponse(200, template, "text/html")
+  response.writeHead(200, { 'Content-Type': 'text/html' });
+  response.write(responseContent);
+  response.end();
 }
+
+module.exports = { handleGameRoute };
