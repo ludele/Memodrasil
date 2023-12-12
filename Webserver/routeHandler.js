@@ -2,7 +2,7 @@
 const fs = require('fs').promises;
 const templatePath = './templates/index.maru';
 const gameHandler = require('./routeHandlers/gameHandler');
-const fileHandler = require('./fileHandler'); // Adjust the path as needed
+const fileHandler = require('./fileHandler');
 
 exports.handleRoute = async function (pathSegments, request, response) {
   function statusCodeResponse(code, value, type) {
@@ -37,9 +37,8 @@ exports.handleRoute = async function (pathSegments, request, response) {
         }
       }
     } else if (seg === 'games') {
-      // Check if the user is requesting the game template
       if (pathSegments[0] === 'template') {
-        const gameTemplatePath = './templates/game-template.maru'; // Adjust the path as needed
+        const gameTemplatePath = './templates/game-template.maru';
         try {
           let gameTemplate = (await fs.readFile(gameTemplatePath)).toString();
           statusCodeResponse(200, gameTemplate, 'text/html');
