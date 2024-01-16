@@ -2,7 +2,7 @@
 "use strict";
 
 const http = require("http");
-const port = "3000";
+const port = "3001";
 const routeHandler = require("./routeHandler");
 
 async function handleRequest(request, response) {

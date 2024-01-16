@@ -2,19 +2,20 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Index</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="/static/style.css">
+   <title>home</title>
+   <script href="themeToggler.js"></script>
 </head>
 <body>
-   <h1 class="box">This is the index page</h1>
-   <div class="box">
-      <p class="box">
-         Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-         Laborum quod possimus quis exercitationem sit animi tempora 
-         dignissimos ad. Tenetur animi unde fuga exercitationem
-         officia earum illum voluptatum consequatur sequi facere?
-      </p>
+   <header>
+      <h1 class="wrapper">Home</h1>
+      <div class="header-box">
+      %links%
+      </div>
+   </header>
+   <div>
+      <h2 class="wrapper">Hej aaaaaaaa</h2>
    </div>
-   <h2>For testing</h2>
 </body>
-</html>
+</html

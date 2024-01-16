@@ -4,6 +4,24 @@ const templatePath = './templates/index.maru';
 const gameHandler = require('./routeHandlers/gameHandler');
 const fileHandler = require('./fileHandler');
 
+function generateRouteList() {
+  let lis = "";
+
+  const routes = [
+    { name: "Blog", url: "/blog" },
+    { name: "Games", url: "/games" },
+    { name: "Misc", url: "/misc"},
+    { name: "About", url: "/about"},
+
+  ];
+
+  routes.forEach((route) => {
+    lis += `<li><a href="${route.url}">${route.name}</a></li>`;
+  });
+
+  return lis;
+}
+
 exports.handleRoute = async function (pathSegments, request, response) {
   function statusCodeResponse(code, value, type) {
     response.writeHead(code, { 'Content-Type': `${type}` });
@@ -12,18 +30,14 @@ exports.handleRoute = async function (pathSegments, request, response) {
   }
 
   if (pathSegments.length === 0) {
-    const staticFilePath = './static/home.html';
 
-    try {
-      await fileHandler.handleFileRequest(request, response);
-    } catch (error) {
-      if (error.code === 'ENOENT') {
-        let template = (await fs.readFile(templatePath)).toString();
-        statusCodeResponse(200, template, 'text/html');
-      } else {
-        statusCodeResponse(500, '500 Internal Server Error', 'text/plain');
-      }
-    }
+    const template = (await fs.readFile(templatePath)).toString();
+    const routeList = generateRouteList();
+    const templateWithRoutes = template.replace("%links%", routeList);
+
+    statusCodeResponse(200, templateWithRoutes, "text/html");
+    return;
+
   } else {
     let seg = pathSegments.shift();
     if (seg === 'static') {
