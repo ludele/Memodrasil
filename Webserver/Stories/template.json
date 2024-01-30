@@ -1,0 +1,28 @@
+{
+   "startOption": {
+     "text": "Scenario text",
+     "options": [
+       {
+         "text": "choice one of the scenario",
+         "destination": "theDestination"
+       },
+       {
+         "text": "choice two of the scenario",
+         "destination": "theDestination2"
+       }
+     ]
+   },
+   "theDestination": {
+     "text": "...",
+     "options": [
+       {
+         "text": "...",
+         "destination": "..."
+       },
+       {
+         "text": "...",
+         "destination": "..."
+       }
+     ]
+   }
+}

@@ -15,5 +15,5 @@ function chooseOption(index) {
 fetch('/games/template')
   .then((response) => response.text())
   .then((html) => {
-      document.getElementsByClassName('game-container').innerHTML = html;
+    document.getElementsByClassName('game-container').innerHTML = html;
   });
