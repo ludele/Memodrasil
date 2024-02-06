@@ -27,7 +27,8 @@ async function handleGameRoute(pathSegments, request, response) {
   const currentScene = currentGame.getCurrentScene();
   const templateData = {
     title: currentScene.title,
-    content: `
+    content: 
+    `
       <h1>${currentScene.text}</h1>
         ${currentScene.options.map((option, index) => `<li class="wrapper"><a href="/games/choose" onclick="chooseOption(${index})">${option.text}</a></li>`).join('')}
       </ul>

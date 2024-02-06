@@ -37,7 +37,6 @@ exports.handleRoute = async function (pathSegments, request, response, session) 
 
     statusCodeResponse(200, templateWithRoutes, "text/html");
     return;
-    saveSession(sessionId, session, response)
 
   } else {
     let seg = pathSegments.shift();
