@@ -22,7 +22,7 @@ function generateRouteList() {
   return lis;
 }
 
-exports.handleRoute = async function (pathSegments, request, response) {
+exports.handleRoute = async function (pathSegments, request, response, session) {
   function statusCodeResponse(code, value, type) {
     response.writeHead(code, { 'Content-Type': `${type}` });
     response.write(value);
@@ -37,6 +37,7 @@ exports.handleRoute = async function (pathSegments, request, response) {
 
     statusCodeResponse(200, templateWithRoutes, "text/html");
     return;
+    saveSession(sessionId, session, response)
 
   } else {
     let seg = pathSegments.shift();
