@@ -22,7 +22,7 @@ function generateRouteList() {
   return lis;
 }
 
-exports.handleRoute = async function (pathSegments, request, response, session) {
+exports.handleRoute = async function (pathSegments, request, response) {
   function statusCodeResponse(code, value, type) {
     response.writeHead(code, { 'Content-Type': `${type}` });
     response.write(value);
