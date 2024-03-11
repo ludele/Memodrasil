@@ -34,6 +34,12 @@ function visualizeNarrativeOrder(index) {
   });
 }
 
+export {
+  visualizeNarrativeOrder,
+  parseScene,
+  parseNarrativeIndex
+}
+
 //const index = parseNarrativeIndex('narrative_index.yaml');
 //visualizeNarrativeOrder(index);
 
