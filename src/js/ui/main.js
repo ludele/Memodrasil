@@ -1,15 +1,34 @@
-const { app, BrowserWindow } = require('electron/main')
+const { app, BrowserWindow, ipcMain } = require('electron/main')
 const fs = require('fs');
 const path = require('path');
 
 const createWindow = () => {
-  const win = new BrowserWindow({
+  const mainWindow = new BrowserWindow({
     width: 1280,
-    height: 720
-  })
+    height: 720,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false 
+    }
+  });
 
-  win.loadFile('./html/index.html')
+  mainWindow.loadFile('./html/index.html')
 }
+
+ipcMain.on('open-game-window', () => {
+  mainWindow.loadFile('./html/game-window.html');
+  const narrativePath = path.join(__dirname, './assets/narratives/narritive.json');
+  fs.readFile(narrativePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error("Failed to load narrative:", err);
+      return;
+    }
+    mainWindow.webContents.once('did-finish-load', () => {
+      mainWindow.webContents.send('narrative-loaded', JSON.parse(data));
+    });
+  });
+});
+
 
 app.whenReady().then(() => {
   createWindow()

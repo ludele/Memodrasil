@@ -1,3 +1,9 @@
+const path = require('path');
+const Game = require(path.join(__dirname, '..', '..', 'src', 'js', 'engine', 'game.js'));
+const { ipcRenderer } = require('electron');
+
+console.log("test");
+
 document.addEventListener('DOMContentLoaded', () => {
   ipcRenderer.send('request-narrative'); 
 });
