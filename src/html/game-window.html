@@ -8,10 +8,19 @@
    <script src="../js/ui/game-script.js" defer></script>
 </head>
 <body>
+   <button id="menuToggle"></button>
+   <div id="mainMenu" class="menu">
+      <ul>
+        <li><a class="menu-item" href="index.html">Title Screen</a></li>
+        <li><a class="menu-item" href="settings.html">Settings</a></li>
+        <li><a class="menu-item" data-action="exit">Exit</a></li>
+      </ul>
+    </div>
+    
    <div>
       <div class="game-container">
          <div id="narrativeText"></div>
-         <div id="optionsContainter"></div>
+         <div id="optionsContainer"></div>
       </div>
    </div>
 </body>
