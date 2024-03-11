@@ -1,29 +1,13 @@
-### IntelliJ IDEA ###
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
+src/node_modules
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+**/node_modules
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+**/package-lock.json
 
-### VS Code ###
-.vscode/
+**/.env
 
-### Mac OS ###
-.DS_Store
+**/.vs
+
+**/obj
+
+.vs

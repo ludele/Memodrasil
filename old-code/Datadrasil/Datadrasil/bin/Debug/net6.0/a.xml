@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfDataRepresentation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DataRepresentation>
+    <Categories>
+      <DataCategory>
+        <CategoryName>a</CategoryName>
+        <Items>
+          <DataItem>
+            <ItemName>r</ItemName>
+            <Properties>
+              <KeyValue>
+                <Name>a</Name>
+                <Value>a</Value>
+              </KeyValue>
+              <KeyValue>
+                <Name>a</Name>
+                <Value>a</Value>
+              </KeyValue>
+              <KeyValue>
+                <Name>a</Name>
+                <Value>a</Value>
+              </KeyValue>
+            </Properties>
+          </DataItem>
+        </Items>
+      </DataCategory>
+    </Categories>
+  </DataRepresentation>
+</ArrayOfDataRepresentation>

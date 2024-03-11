@@ -1,0 +1,10 @@
+[2023-11-14 07:59:33] System.InvalidOperationException: Error occurred during XML deserialization.
+StackTrace:    at Datadrasil.XMLFormatHandler`1.ReadData(String filePath) in C:\Users\ludvig.johansson1\Main\memodrasil\Datadrasil\Datadrasil\FormatHandlers\XMLFormatHandler.cs:line 25
+   at Datadrasil.FormatHandlerManager`1.ReadData(String filePath) in C:\Users\ludvig.johansson1\Main\memodrasil\Datadrasil\Datadrasil\FormatHandlers\FormatHandlerManager.cs:line 31
+   at Datadrasil.MainMenus.<>c__DisplayClass1_1.<Main>b__4() in C:\Users\ludvig.johansson1\Main\memodrasil\Datadrasil\Datadrasil\MenuSystem\MainMenus.cs:line 44
+   at Datadrasil.MenuItem.Execute() in C:\Users\ludvig.johansson1\Main\memodrasil\Datadrasil\Datadrasil\MenuSystem\MenuItem.cs:line 36
+   at Datadrasil.Menu.Execute() in C:\Users\ludvig.johansson1\Main\memodrasil\Datadrasil\Datadrasil\MenuSystem\Menu.cs:line 38
+   at Datadrasil.MenuItem.Execute() in C:\Users\ludvig.johansson1\Main\memodrasil\Datadrasil\Datadrasil\MenuSystem\MenuItem.cs:line 41
+   at Datadrasil.Menu.Execute() in C:\Users\ludvig.johansson1\Main\memodrasil\Datadrasil\Datadrasil\MenuSystem\Menu.cs:line 38
+   at Datadrasil.Program.Main() in C:\Users\ludvig.johansson1\Main\memodrasil\Datadrasil\Datadrasil\Program.cs:line 20
+------------------------------
