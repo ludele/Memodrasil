@@ -1,22 +1,26 @@
-function displayCurrentScene() {
-  const scene = narrative[currentScene];
+document.addEventListener('DOMContentLoaded', () => {
+  ipcRenderer.send('request-narrative'); 
+});
+
+ipcRenderer.on('narrative-loaded', (event, narrative) => {
+  const game = new Game(narrative); 
+  displayCurrentScene(game); 
+});
+
+function displayCurrentScene(game) {
+  const scene = game.getCurrentScene(); 
   document.getElementById('narrativeText').innerText = scene.text;
 
   const optionsContainer = document.getElementById('optionsContainer');
-  optionsContainer.innerHTML = '';
+  optionsContainer.innerHTML = ''; 
 
   scene.options.forEach((option, index) => {
       const button = document.createElement('button');
       button.innerText = option.text;
-      button.addEventListener('click', () => chooseOption(index));
+      button.onclick = () => {
+          game.chooseOption(index); 
+          displayCurrentScene(game); 
+      };
       optionsContainer.appendChild(button);
   });
-}
-
-function chooseOption(index) {
-  const chosenOption = narrative[currentScene].options[index];
-
-  currentScene = chosenOption.destination;
-
-  displayCurrentScene();
 }

@@ -8,7 +8,7 @@ function parseNarrativeIndex(indexFile) {
   } catch (error) {
     console.error(`Error loading index file ${indexFile}:`, error);
     return null;
-  }
+    }
 }
 
 function parseScene(sceneFile) {
