@@ -1,3 +1,5 @@
+// home-script.js
+
 const { ipcRenderer } = require('electron');
 
 console.log("test");

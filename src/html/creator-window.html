@@ -1,9 +1,13 @@
+<!-- creator-window.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="../css/style.css">
+   <script src="../js/ui/resize-textarea.js" defer></script>
+   <script src="../js/ui/creator.js" defer></script>
+   <!-- <script src="../js/ui/narrative-visualizer.js" defer></script> -->
    <title>Creator</title>
 </head>
 <body>
@@ -14,8 +18,18 @@
          <a id="startGameBtn" href="game-window.html">Game</a>
       </div>
    </header>
-   <div>
-      <div class="game-container"></div>
-   </div>
+   <div class="box form-container">
+      <form id="sceneForm">
+          <textarea id="sceneText" name="sceneText" placeholder="Enter Scene Name"></textarea><br>
+          <textarea id="optionText" name="optionText" placeholder="Enter Option Text"></textarea><br>
+          <textarea id="destination" name="destination" placeholder="Enter Destination Scene"></textarea><br>
+          <div id="button-container">
+              <button type="button" id="addOption">Add Option</button>
+              <button type="button" id="saveNarrative">Save Narrative</button> 
+          </div>
+      </form>
+  </div>  
+
+   <div id="visualization"></div>
 </body>
 </html>

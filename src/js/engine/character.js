@@ -1,3 +1,5 @@
+// character.js
+
 class Character {
    constructor(name, initialAttributes = {}) {
      this.name = name;

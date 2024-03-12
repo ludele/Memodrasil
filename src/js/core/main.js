@@ -1,3 +1,5 @@
+// main.js
+
 const { app, BrowserWindow, ipcMain } = require('electron/main')
 const fs = require('fs/promises');
 const path = require('path');

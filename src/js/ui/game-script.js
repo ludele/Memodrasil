@@ -1,3 +1,5 @@
+// game-script.js
+
 const path = require('path');
 const Game = require(path.join(__dirname, '..', '..', 'src', 'js', 'engine', 'game.js'));
 const { ipcRenderer } = require('electron');
