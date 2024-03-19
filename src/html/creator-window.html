@@ -20,13 +20,20 @@
    </header>
    <div class="box form-container">
       <form id="sceneForm">
-          <textarea id="sceneText" name="sceneText" placeholder="Enter Scene Name"></textarea><br>
+          <textarea class="box" id="narrativeName" name="narrativeName" placeholder="Enter file-name"></textarea>
+          <textarea id="sceneName" name="sceneName" placeholder="Enter Scene Name"></textarea><br>
+          <textarea id="sceneText" name="sceneText" placeholder="Enter Scene Text"></textarea><br>
           <textarea id="optionText" name="optionText" placeholder="Enter Option Text"></textarea><br>
           <textarea id="destination" name="destination" placeholder="Enter Destination Scene"></textarea><br>
           <div id="button-container">
               <button type="button" id="addOption">Add Option</button>
               <button type="button" id="saveNarrative">Save Narrative</button> 
           </div>
+          <div class="box button-container">
+            <input class="box" type="file" id="loadNarrativeFile" accept=".json">
+            <button id="cleanseNarrative">Cleanse Narrative</button>
+            <button id="loadNarrativeButton">Load Narrative</button>
+          </div> 
       </form>
   </div>  
 

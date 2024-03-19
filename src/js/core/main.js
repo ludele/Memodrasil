@@ -23,7 +23,7 @@ ipcMain.on('open-game-window', async () => {
   try {
 
     // Will need a new system to make the user be able to at-least load narratives.
-    const narrativePath = path.join(__dirname, '..', '..', 'assets', 'narratives', 'narrative.json');
+    const narrativePath = path.join(__dirname, '..', '..', 'assets', 'narratives', 'abc.json');
     
     const data = await fs.readFile(narrativePath, 'utf8');
     

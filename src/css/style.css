@@ -141,6 +141,7 @@ form {
 }
 
 textarea {
+   font-size: 1.15rem;
    resize: none;
    overflow: hidden;
    width: 70%;
@@ -157,19 +158,45 @@ button:hover {
    background-color: #e6b800;
 }
 
- ::-webkit-scrollbar {
+.scene-node {
+   margin-bottom: 20px;
+}
+
+ul {
+   list-style-type: none;
+   padding: 0;
+}
+
+li {
+   cursor: pointer;
+   padding: 5px;
+   border: 1px solid #ccc;
+   margin-bottom: 5px;
+}
+
+li:hover {
+   background-color: #f0f0f0;
+}
+
+.destination {
+   color: #007bff;
+   font-style: italic;
+   margin-left: 10px;
+}
+
+::-webkit-scrollbar {
    width: 1rem;
    border-radius: 2rem;
- }
- 
- ::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-track {
    background: var(--background-color);
 }
- 
- ::-webkit-scrollbar-thumb {
+
+::-webkit-scrollbar-thumb {
    background: var(--box-background);
- }
- 
- ::-webkit-scrollbar-thumb:hover {
+}
+
+::-webkit-scrollbar-thumb:hover {
    background: #555;
- } 
+}

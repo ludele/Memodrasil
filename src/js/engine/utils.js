@@ -1,7 +1,7 @@
 //utils.js
 
 const fs = require('fs');
-const yaml = require('js-yaml');
+// const yaml = require('js-yaml');
 
 function parseNarrativeIndex(indexFile) {
   try {
@@ -36,10 +36,24 @@ function visualizeNarrativeOrder(index) {
   });
 }
 
-export {
+function generateCustomId() {
+    const timestamp = Date.now().toString(36);
+    const randomPart = Math.random().toString(36).substring(2, 15);
+    return timestamp + randomPart;
+}
+
+function generateIdToDate() {
+    const timestamp = Date.now()
+    const randomPart = Math.random().toString(36).substring(2, 15);
+    return timestamp + `-${randomPart}`;
+}
+
+module.exports = {
   visualizeNarrativeOrder,
   parseScene,
-  parseNarrativeIndex
+  parseNarrativeIndex,
+  generateCustomId,
+  generateIdToDate
 }
 
 //const index = parseNarrativeIndex('narrative_index.yaml');

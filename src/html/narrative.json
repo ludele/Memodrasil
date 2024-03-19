@@ -1,17 +1,9 @@
 {
-  "start": {
+  "dad": {
     "options": [
       {
-        "text": "Hello and welcome",
-        "destination": "afterStart"
-      }
-    ]
-  },
-  "afterStart": {
-    "options": [
-      {
-        "text": "Hello, again!",
-        "destination": "afterAfterStart"
+        "text": "adadda",
+        "destination": "aada"
       }
     ]
   }
