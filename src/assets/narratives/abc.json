@@ -1,32 +1,66 @@
 {
   "start": {
-    "text": "Welcome to the scenario",
+    "text": "Welcome!",
     "options": [
       {
-        "text": "Enter the village",
-        "destination": "1a"
+        "text": "a",
+        "destination": "a"
       },
       {
-        "text": "Return to the forest",
-        "destination": "1b"
+        "text": "b",
+        "destination": "b"
+      },
+      {
+        "text": "c",
+        "destination": "c"
       }
     ]
   },
-  "1a": {
-    "text": "You enter the village\n\nYou see stuff and such, maybe a house, or two?",
+  "a": {
+    "text": "This is a!",
     "options": [
       {
-        "text": "Knock on the door of a house",
-        "destination": "1aa"
+        "text": "b",
+        "destination": "b"
+      },
+      {
+        "text": "c",
+        "destination": "c"
       }
     ]
   },
-  "1aa": {
-    "text": "The owner does not answer",
+  "b": {
+    "text": "This is b!",
     "options": [
       {
-        "text": "Go back",
-        "destination": "1a"
+        "text": "a",
+        "destination": "a"
+      },
+      {
+        "text": "c",
+        "destination": "c"
+      }
+    ]
+  },
+  "cc": {
+    "text": "This is b!",
+    "options": [
+      {
+        "text": "c",
+        "destination": "c"
+      }
+    ]
+  },
+  "c": {
+    "text": "This is c!",
+    "options": [
+      {
+        "text": "a",
+        "destination": "a"
+      },
+      {
+        "text": "b",
+        "destination": "b"
       }
     ]
   }

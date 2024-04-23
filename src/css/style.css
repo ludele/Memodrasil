@@ -29,6 +29,8 @@ body {
    text-align: left;
 }
 
+.seperator {}
+
 .header-box {
    display: flex;
    flex-wrap: wrap;
@@ -68,7 +70,8 @@ body {
    border-radius: 1rem;
 }
 
-h1 {
+h1,
+h2 {
    color: #601033;
 }
 
@@ -183,6 +186,8 @@ li:hover {
    font-style: italic;
    margin-left: 10px;
 }
+
+
 
 ::-webkit-scrollbar {
    width: 1rem;
