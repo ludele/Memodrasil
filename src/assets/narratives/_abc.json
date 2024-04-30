@@ -1,0 +1,67 @@
+{
+  "start": {
+    "text": "Welcome!",
+    "options": [
+      {
+        "text": "a",
+        "destination": "a"
+      },
+      {
+        "text": "b",
+        "destination": "b"
+      },
+      {
+        "text": "c",
+        "destination": "c"
+      }
+    ]
+  },
+  "a": {
+    "text": "This is a!",
+    "options": [
+      {
+        "text": "b",
+        "destination": "b"
+      },
+      {
+        "text": "c",
+        "destination": "c"
+      }
+    ]
+  },
+  "b": {
+    "text": "This is b!",
+    "options": [
+      {
+        "text": "a",
+        "destination": "a"
+      },
+      {
+        "text": "c",
+        "destination": "c"
+      }
+    ]
+  },
+  "cc": {
+    "text": "This is b!",
+    "options": [
+      {
+        "text": "c",
+        "destination": "c"
+      }
+    ]
+  },
+  "c": {
+    "text": "This is c!",
+    "options": [
+      {
+        "text": "a",
+        "destination": "a"
+      },
+      {
+        "text": "b",
+        "destination": "b"
+      }
+    ]
+  }
+}

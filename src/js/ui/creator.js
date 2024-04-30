@@ -11,7 +11,13 @@ document.getElementById('addOption').addEventListener('click', () => {
     var sceneName = document.getElementById('sceneName').value;
     var sceneText = document.getElementById('sceneText').value;
     var optionText = document.getElementById('optionText').value;
-    var destination = document.getElementById('destination').value;
+    var destination = optionText;
+    var counter = 1;
+
+    while (narrative[destination]) {
+        destination = optionText + '-' + counter;
+        counter++;
+    }
 
     if (!sceneName | !sceneText || !optionText || !destination) {
         alert('Please fill in all fields.');
@@ -25,7 +31,7 @@ document.getElementById('addOption').addEventListener('click', () => {
     narrative[sceneName].options.push({ text: optionText, destination: destination });
 
     document.getElementById('optionText').value = '';
-    document.getElementById('destination').value = '';
+    // document.getElementById('destination').value = '';
 
     console.log('Option added:', optionText, '=>', destination);
 
@@ -70,6 +76,21 @@ function renderVisualization() {
 }
 document.addEventListener('DOMContentLoaded', () => {
     renderVisualization();
+});
+
+/**
+ * Display the scene text when a scene is clicked.
+ */
+document.addEventListener('click', (event) => {
+    const destination = event.target.dataset.destination;
+    if (destination) {
+        const sceneName = event.target.dataset.sceneName;
+        console.log('Current Scene:', sceneName, 'Go to destination:', destination);
+        document.getElementById('sceneName').value = destination;
+
+        const sceneText = narrative[sceneName].text;
+        document.getElementById('sceneText').value = sceneText;
+    }
 });
 
 document.getElementById('loadNarrativeButton').addEventListener('click', (event) => {

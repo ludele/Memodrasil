@@ -1,5 +1,6 @@
 //utils.js
 
+const { error } = require('console');
 const fs = require('fs');
 // const yaml = require('js-yaml');
 
@@ -36,10 +37,21 @@ function visualizeNarrativeOrder(index) {
   });
 }
 
-function generateCustomId() {
-    const timestamp = Date.now().toString(36);
-    const randomPart = Math.random().toString(36).substring(2, 15);
-    return timestamp + randomPart;
+function generateCustomId(length) {
+  let tempLength = 4;
+  try {
+    length = parseInt(length);
+    if (isNaN(length) || length <= 0) {
+      throw new Error(`Invalid length value. Defaulting to ${tempLength}.`);
+    }
+  } catch (error) {
+    console.error(error.message);
+    length = tempLength;
+  }
+
+  const timestamp = Date.now().toString(length);
+  const randomSuffix = Math.random().toString(length).substring(2, length + 2);
+  return timestamp + randomSuffix;
 }
 
 function generateIdToDate() {

@@ -1,66 +1,59 @@
 {
   "start": {
-    "text": "Welcome!",
+    "text": "Welcome to this scenario!",
     "options": [
       {
-        "text": "a",
-        "destination": "a"
+        "text": "What is the point of this all?",
+        "destination": "What is the point of this all?"
       },
       {
-        "text": "b",
-        "destination": "b"
-      },
-      {
-        "text": "c",
-        "destination": "c"
+        "text": "The point is the point of it all!",
+        "destination": "The point is the point of it all!"
       }
     ]
   },
-  "a": {
-    "text": "This is a!",
+  "The point is the point of it all!": {
+    "text": "Which means that the point is just to do the point",
     "options": [
       {
-        "text": "b",
-        "destination": "b"
-      },
-      {
-        "text": "c",
-        "destination": "c"
+        "text": "Okay? What does that mean?",
+        "destination": "Okay? What does that mean?"
       }
     ]
   },
-  "b": {
-    "text": "This is b!",
+  "Okay? What does that mean?": {
+    "text": "That there is not meaning, but meaninglessness still promote that meaninglessness has to mean something, so there is still meaning in meaninglessness.",
     "options": [
       {
-        "text": "a",
-        "destination": "a"
-      },
-      {
-        "text": "c",
-        "destination": "c"
+        "text": " ",
+        "destination": " "
       }
     ]
   },
-  "cc": {
-    "text": "This is b!",
+  " ": {
+    "text": "Nothing",
     "options": [
       {
-        "text": "c",
-        "destination": "c"
+        "text": "start",
+        "destination": "start-1"
       }
     ]
   },
-  "c": {
-    "text": "This is c!",
+  "What is the point of this all?": {
+    "text": "Testing, actually!",
     "options": [
       {
-        "text": "a",
-        "destination": "a"
-      },
+        "text": "Testing?",
+        "destination": "Testing?"
+      }
+    ]
+  },
+  "Testing?": {
+    "text": "Testing as testing if it works or not.",
+    "options": [
       {
-        "text": "b",
-        "destination": "b"
+        "text": "Okay",
+        "destination": "Okay"
       }
     ]
   }
