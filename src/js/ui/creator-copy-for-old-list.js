@@ -23,7 +23,6 @@ document.getElementById('addOption').addEventListener('click', () => {
         alert('Please fill in all fields.');
         return;
     }
-    
 
     if (!narrative[sceneName]) {
         narrative[sceneName] = { text: sceneText, options: [] };
@@ -43,64 +42,37 @@ function renderVisualization() {
     const visualization = document.getElementById('visualization');
     visualization.innerHTML = '';
 
-    const renderedScenes = new Set(); // Keep track of rendered scenes
+    for (const sceneText in narrative) {
+        if (narrative.hasOwnProperty(sceneText)) {
+            const sceneNode = document.createElement('div');
+            sceneNode.classList.add('scene-node');
+            sceneNode.textContent = sceneText;
 
-    const renderScene = (sceneName, parentNode) => {
-        if (renderedScenes.has(sceneName)) return; // Check if scene has already been rendered
-        renderedScenes.add(sceneName); // Add scene to rendered scenes
+            const optionsList = document.createElement('ul');
 
-        const scene = narrative[sceneName];
-        if (!scene) return;
+            narrative[sceneText].options.forEach(option => {
+                const optionItem = document.createElement('li');
+                optionItem.textContent = option.text;
+                optionItem.dataset.destination = option.destination;
+                optionItem.dataset.sceneName = sceneText;
 
-        const optionsList = document.createElement('ul');
-
-        scene.options.forEach(option => {
-            const optionItem = document.createElement('li');
-            optionItem.textContent = option.text;
-            optionItem.dataset.destination = option.destination;
-            optionItem.dataset.sceneName = sceneName;
-
-            optionsList.appendChild(optionItem);
-
-            // Recursively render nested scenes
-            renderScene(option.destination, optionItem);
-        });
-
-        if (parentNode) {
-            parentNode.appendChild(optionsList);
-        } else {
-            visualization.appendChild(optionsList);
-        }
-    };
-
-    // Start rendering from the root node
-    renderScene('start', null);
-
-    visualization.addEventListener('click', (event) => {
-        const optionItem = event.target.closest('li');
-        if (optionItem) {
-            const destination = optionItem.dataset.destination;
-            if (destination) {
-                const sceneName = optionItem.dataset.sceneName;
-                console.log('Current Scene:', sceneName, 'Go to destination:', destination);
-                document.getElementById('sceneName').value = destination;
-    
-                const sceneText = narrative[destination].text;
-                document.getElementById('sceneText').value = sceneText;
-            }
-        }
-    });
-
-    visualization.addEventListener('mouseover', (event) => {
-        if (event.target.tagName.toLowerCase() === 'li') {
-            event.target.classList.add('hover');
-            visualization.querySelectorAll('li').forEach(element => {
-                if (element !== event.target && !element.contains(event.target)) {
-                    element.classList.remove('hover');
-                }
+                optionsList.appendChild(optionItem);
             });
+
+            sceneNode.appendChild(optionsList);
+            visualization.appendChild(sceneNode);
+        }
+    }
+
+    document.addEventListener('click', (event) => {
+        const destination = event.target.dataset.destination;
+        if (destination) {
+            const sceneName = event.target.dataset.sceneName;
+            console.log('Current Scene:', sceneName, 'Go to destination:', destination);
+            document.getElementById('sceneName').value = destination;
         }
     });
+
 }
 document.addEventListener('DOMContentLoaded', () => {
     renderVisualization();

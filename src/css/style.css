@@ -187,7 +187,23 @@ li:hover {
    margin-left: 10px;
 }
 
+.scene-node ul li.highlight {
+   background-color: #ff8f8f; 
+   cursor: pointer;
+}
 
+.scene-node li:hover {
+   background-color: #f58080; 
+   cursor: pointer;
+}
+
+.scene-node li:hover > ul > li {
+   background-color: #ea8585; 
+}
+
+.scene-node ul > li:hover {
+   background-color: inherit;
+}
 
 ::-webkit-scrollbar {
    width: 1rem;
