@@ -8,7 +8,7 @@
    <link rel="stylesheet" href="../css/style.css">
    <script src="../js/ui/resize-textarea.js" defer></script>
    <script src="../js/ui/creator.js" defer></script>
-   <!-- <script src="../js/ui/narrative-visualizer.js" defer></script> -->
+   <script src="../js/ui/home-script.js" defer></script>
    <title>Creator</title>
 </head>
 
@@ -17,7 +17,7 @@
       <h1 class="wrapper">Creator</h1>
       <div class="header-box">
          <a href="index.html">Home</a>
-         <a id="startGameBtn" href="game-window.html">Game</a>
+         <a id="startGameBtn" href="#">Game</a>
       </div>
    </header>
    <div class="box form-container">
@@ -26,13 +26,15 @@
 
          <div class="box">
             <h2>Scene</h2>
+            <h3>Start with scene name 'start' (without quotes)</h2>
             <textarea id="sceneName" name="sceneName" placeholder="Enter Scene Name"></textarea><br>
             <textarea id="sceneText" name="sceneText" placeholder="Enter Scene Text"></textarea><br>
          </div>
          <div class="box">
             <h2>Option and destination</h2>
-            <textarea id="optionText" name="optionText" placeholder="Enter Option Text"></textarea><br>
-            <textarea id="destination" name="destination" placeholder="Enter Destination Scene"></textarea><br>
+            <h3></h2>
+            <textarea id="optionText" name="optionText" placeholder="Enter Option Text: The name of the option"></textarea><br>
+            <textarea id="destination" name="destination" placeholder="Enter Destination Scene: The scene option goes to"></textarea><br>
          </div>
 
          <div id="button-container">

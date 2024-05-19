@@ -23,7 +23,7 @@ ipcMain.on('open-game-window', async () => {
   try {
 
     // Will need a new system to make the user be able to at-least load narratives.
-    const narrativePath = path.join(__dirname, '..', '..', 'assets', 'narratives', 'abc.json');
+    const narrativePath = path.join(__dirname, '..', '..', 'assets', 'narratives', 'narrative.json');
     
     const data = await fs.readFile(narrativePath, 'utf8');
     
@@ -33,6 +33,10 @@ ipcMain.on('open-game-window', async () => {
   } catch (err) {
     console.error("Failed to load narrative:", err);
   }
+});
+
+ipcMain.on('load-narrative', (event, narrative) => {
+  mainWindow.webContents.send('narrative-loaded', narrative);
 });
 
 app.whenReady().then(() => {

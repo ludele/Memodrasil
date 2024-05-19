@@ -3,7 +3,12 @@
 const { error } = require('console');
 const vm = require('vm');
 
+
 class Game {
+  /**
+ * Constructor for the Game class.
+ * @param {Object} narrative - the narrative object containing scenes and options.
+ */
   constructor(narrative) {
     try {
       if (!narrative || typeof narrative !== "object") {
@@ -18,7 +23,10 @@ class Game {
       console.error(`Error in Game constructor: ${error.message}`);
     }
   }
-
+  /**
+    * Sets the player's name.
+    * @param {string} name - The player's name.
+    */
   setPlayerName(name) {
     try {
       this.player.name = name;
@@ -27,6 +35,10 @@ class Game {
     }
   }
 
+  /**
+  * Sets the player's stats.
+  * @param {Object} stats - The player's stats.
+  */
   setPlayerStats(stats) {
     try {
       this.player.stats = stats;
@@ -35,6 +47,11 @@ class Game {
     }
   }
 
+  /**
+  * Sets a dynamic value.
+  * @param {string} key - The key for the dynamic value.
+  * @param {any} value - The value to be set.
+  */
   setDynamicValue(key, value) {
     try {
       this.dynamicValues[key] = value;
@@ -43,6 +60,10 @@ class Game {
     }
   }
 
+  /**
+  * Gets the current scene.
+  * @returns {Object} The current scene object.
+  */
   getCurrentScene() {
     try {
       const currentScene = this.narrative.find(scene => scene.id === this.currentScene);
@@ -52,6 +73,11 @@ class Game {
     }
   }
 
+
+  /**
+   * Chooses an option from the current scene.
+   * @param {number} optionIndex - The index of the chosen option.
+   */
   chooseOption(optionIndex) {
     try {
       const currentScene = this.getCurrentScene();
@@ -84,6 +110,11 @@ class Game {
     }
   }
 
+  /**
+  * Evaluates a condition using the player's stats and dynamic values.
+  * @param {string} condition - The condition to evaluate.
+  * @returns {boolean} The result of the condition evaluation.
+  */
   evaluateCondition(condition) {
     try {
       const context = { player: this.player, dynamicValues: this.dynamicValues };
@@ -94,6 +125,10 @@ class Game {
     }
   }
 
+  /**
+  * Executes an action script.
+  * @param {string} action - The action script to execute.
+  */
   executeAction(action) {
     try {
       const context = { player: this.player, dynamicValues: this.dynamicValues };
@@ -104,6 +139,11 @@ class Game {
     }
   }
 
+  /**
+  * Resolves dynamic links in a scene.
+  * @param {Object} scene - The scene object.
+  * @returns {Object} The scene object with resolved dynamic links.
+  */
   resolveDynamicLinks(scene) {
     try {
       if (scene && scene.dynamicLink) {
@@ -116,6 +156,11 @@ class Game {
     }
   }
 
+  /**
+  * Calculates the dynamic destination for a link.
+  * @param {string} dynamicLink - The dynamic link key.
+  * @returns {string} The calculated destination.
+  */
   calculateDynamicDestination(dynamicLink) {
     try {
       return this.dynamicValues[dynamicLink] || 'defaultDestination';
@@ -124,6 +169,11 @@ class Game {
     }
   }
 
+  /**
+  * Replaces dynamic variables in a text string.
+  * @param {string} text - The text with dynamic variables.
+  * @returns {string} The text with replaced dynamic variables.
+  */
   replaceDynamicVariables(text) {
     try {
       return text.replace(/{player.name}/g, this.player.name);
@@ -132,6 +182,9 @@ class Game {
     }
   }
 
+  /**
+  * Displays the current scene in the console.
+  */
   displayCurrentScene() {
     try {
       const currentScene = this.getCurrentScene();
@@ -149,6 +202,10 @@ class Game {
     }
   }
 
+  /**
+ * Loads a game from a YAML string.
+ * @param {string} yamlString - The YAML string representing the game.
+ */
   loadGameFromYaml(yamlString) {
     try {
       const parsedData = yaml.load(yamlString);

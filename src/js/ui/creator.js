@@ -6,24 +6,18 @@ const utils = require(path.join(__dirname, '..', '..', 'src', 'js', 'engine', 'u
 
 let narrative = {};
 
+// Event listener for the "Add Option" button click.
+// Adds an option to the narrative.
 document.getElementById('addOption').addEventListener('click', () => {
-
     var sceneName = document.getElementById('sceneName').value;
     var sceneText = document.getElementById('sceneText').value;
     var optionText = document.getElementById('optionText').value;
-    var destination = optionText;
-    var counter = 1;
+    var destination = document.getElementById('destination').value;
 
-    while (narrative[destination]) {
-        destination = optionText + '-' + counter;
-        counter++;
-    }
-
-    if (!sceneName | !sceneText || !optionText || !destination) {
+    if (!sceneName || !sceneText || !optionText || !destination) {
         alert('Please fill in all fields.');
         return;
     }
-    
 
     if (!narrative[sceneName]) {
         narrative[sceneName] = { text: sceneText, options: [] };
@@ -32,60 +26,80 @@ document.getElementById('addOption').addEventListener('click', () => {
     narrative[sceneName].options.push({ text: optionText, destination: destination });
 
     document.getElementById('optionText').value = '';
-    // document.getElementById('destination').value = '';
+    document.getElementById('destination').value = '';
 
     console.log('Option added:', optionText, '=>', destination);
 
     renderVisualization();
 });
 
+/**
+ * Renders the narrative visualization.
+*/
 function renderVisualization() {
     const visualization = document.getElementById('visualization');
     visualization.innerHTML = '';
 
-    const renderedScenes = new Set(); // Keep track of rendered scenes
+    const renderedScenes = new Set();
 
     const renderScene = (sceneName, parentNode) => {
-        if (renderedScenes.has(sceneName)) return; // Check if scene has already been rendered
-        renderedScenes.add(sceneName); // Add scene to rendered scenes
+        if (renderedScenes.has(sceneName)) return;
+        renderedScenes.add(sceneName);
 
         const scene = narrative[sceneName];
         if (!scene) return;
+
+        const sceneItem = document.createElement('ul');
+        sceneItem.classList.add('scene-item');
+        sceneItem.innerHTML = `<strong>${sceneName}:</strong> ${scene.text}`;
 
         const optionsList = document.createElement('ul');
 
         scene.options.forEach(option => {
             const optionItem = document.createElement('li');
-            optionItem.textContent = option.text;
+            // Inner-html is more risky, but due to the idea of the project, it should not have any security issues.
+            optionItem.innerHTML = `<strong>${option.text}</strong> (to: ${option.destination})`;
             optionItem.dataset.destination = option.destination;
             optionItem.dataset.sceneName = sceneName;
+            optionItem.classList.add('option-item');
 
             optionsList.appendChild(optionItem);
 
-            // Recursively render nested scenes
             renderScene(option.destination, optionItem);
         });
 
+        sceneItem.appendChild(optionsList);
+
         if (parentNode) {
-            parentNode.appendChild(optionsList);
+            parentNode.appendChild(sceneItem);
         } else {
-            visualization.appendChild(optionsList);
+            visualization.appendChild(sceneItem);
         }
     };
 
-    // Start rendering from the root node
     renderScene('start', null);
 
     visualization.addEventListener('click', (event) => {
-        const optionItem = event.target.closest('li');
+        const optionItem = event.target.closest('.option-item');
         if (optionItem) {
             const destination = optionItem.dataset.destination;
             if (destination) {
-                const sceneName = optionItem.dataset.sceneName;
-                console.log('Current Scene:', sceneName, 'Go to destination:', destination);
+                console.log('Go to destination:', destination);
                 document.getElementById('sceneName').value = destination;
-    
+
                 const sceneText = narrative[destination].text;
+                document.getElementById('sceneText').value = sceneText;
+            }
+        }
+
+        const sceneItem = event.target.closest('.scene-item');
+        if (sceneItem) {
+            const sceneName = sceneItem.querySelector('strong').textContent.replace(':', '');
+            if (sceneName) {
+                console.log('Current Scene:', sceneName);
+                document.getElementById('sceneName').value = sceneName;
+
+                const sceneText = narrative[sceneName].text;
                 document.getElementById('sceneText').value = sceneText;
             }
         }
@@ -102,25 +116,18 @@ function renderVisualization() {
         }
     });
 }
+
+/**
+ * Event listener for DOMContentLoaded.
+ * Renders the initial visualization.
+*/
 document.addEventListener('DOMContentLoaded', () => {
     renderVisualization();
 });
 
 /**
- * Display the scene text when a scene is clicked.
- */
-document.addEventListener('click', (event) => {
-    const destination = event.target.dataset.destination;
-    if (destination) {
-        const sceneName = event.target.dataset.sceneName;
-        console.log('Current Scene:', sceneName, 'Go to destination:', destination);
-        document.getElementById('sceneName').value = destination;
-
-        const sceneText = narrative[sceneName].text;
-        document.getElementById('sceneText').value = sceneText;
-    }
-});
-
+ * Event listener for the "Load Narrative" button click, where it loads a narrative from a file.
+*/
 document.getElementById('loadNarrativeButton').addEventListener('click', (event) => {
     event.preventDefault();
 
@@ -141,9 +148,7 @@ document.getElementById('loadNarrativeButton').addEventListener('click', (event)
     }
 });
 
-
 document.getElementById('saveNarrative').addEventListener('click', () => {
-    //let narrativeName = utils.generateIdToDate();
     let narrativeName = document.getElementById("narrativeName").value;
     console.log(narrativeName);
     const outputPath = path.join(__dirname, narrativeName);
